@@ -21,22 +21,10 @@ enum class Move {
         Scissor -> 3
     }
 
-    private fun outcomeScore(other: Move) = when (other) {
-        Rock -> when (this) {
-            Rock -> 3
-            Paper -> 6
-            Scissor -> 0
-        }
-        Paper -> when (this) {
-            Rock -> 0
-            Paper -> 3
-            Scissor -> 6
-        }
-        Scissor -> when (this) {
-            Rock -> 6
-            Paper -> 0
-            Scissor -> 3
-        }
+    private fun outcomeScore(other: Move) = when (this to other) {
+        Rock to Paper, Paper to Scissor, Scissor to Rock -> 0
+        Rock to Rock, Paper to Paper, Scissor to Scissor -> 3
+        else -> 6
     }
 
     fun totalScore(other: Move) = typeScore() + outcomeScore(other)
