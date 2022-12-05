@@ -1,9 +1,7 @@
-package me.martelli.adventofcode.day3
-
-import java.io.File
+package me.martelli.adventofcode
 
 fun main() {
-    val input = File(ClassLoader.getSystemResource("day3.txt").file)
+    val input = resource("day3.txt")
     val lines = input.readLines()
     val rucksacks = lines.map { Rucksack(it) }
     val totalPriorities = rucksacks.flatMap { it.getCommonItems() }.sumOf { it.priority }

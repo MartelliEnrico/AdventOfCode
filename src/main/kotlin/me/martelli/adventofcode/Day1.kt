@@ -1,9 +1,7 @@
-package me.martelli.adventofcode.day1
-
-import java.io.File
+package me.martelli.adventofcode
 
 fun main() {
-    val input = File(ClassLoader.getSystemResource("day1.txt").file)
+    val input = resource("day1.txt")
     val lines = input.readLines()
     val elves = mutableListOf<Int>()
     var currentCalories = 0
@@ -17,7 +15,7 @@ fun main() {
     }
     val top3 = elves.sortedDescending().take(3)
     val maxCalories = top3[0]
-    println("1) Max Calories: $maxCalories")
     val top3Total = top3.sum()
+    println("1) Max Calories: $maxCalories")
     println("2) Top 3 Calories: $top3Total")
 }

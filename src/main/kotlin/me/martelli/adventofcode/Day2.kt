@@ -1,9 +1,7 @@
-package me.martelli.adventofcode.day2
-
-import java.io.File
+package me.martelli.adventofcode
 
 fun main() {
-    val input = File(ClassLoader.getSystemResource("day2.txt").file)
+    val input = resource("day2.txt")
     val lines = input.readLines()
     val rounds = lines.map { Move.fromChar(it[0]) to it[2] }
     val total = rounds.sumOf { (their, mine) -> Move.fromChar(mine).totalScore(their) }
