@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day5.txt")
+    val input = resource("day05.txt")
     val lines = input.readLines()
     val splitIndex = lines.indexOf("")
     val stacks = lines.subList(0, splitIndex - 1).toStacks()

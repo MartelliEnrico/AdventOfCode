@@ -4,7 +4,7 @@ import kotlin.math.abs
 import kotlin.math.max
 
 fun main() {
-    val input = resource("day9.txt")
+    val input = resource("day09.txt")
     val lines = input.readLines()
     val rules = lines.map { it.split(" ").let { tokens -> Movement(tokens[0].toDirection(), tokens[1].toInt()) } }
     val head = Segment(Position(0, 0))

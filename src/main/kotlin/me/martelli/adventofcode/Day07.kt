@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day7.txt")
+    val input = resource("day07.txt")
     val fileSystem: Entry.Dir = Entry.Dir()
     lateinit var currentDir: Entry.Dir
     input.forEachLine {

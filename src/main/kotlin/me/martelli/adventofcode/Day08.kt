@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day8.txt")
+    val input = resource("day08.txt")
     val lines = input.readLines()
     val grid = lines.map { line -> line.toCharArray().map { it.digitToInt() } }
     val matrix = Matrix(grid)

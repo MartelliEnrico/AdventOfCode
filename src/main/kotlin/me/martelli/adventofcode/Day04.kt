@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day4.txt")
+    val input = resource("day04.txt")
     val lines = input.readLines()
     val pairs = lines.map { it.split(',', '-').let { (a1, a2, b1, b2) -> a1.toInt()..a2.toInt() to b1.toInt()..b2.toInt() } }
     val fullyEnclosed = pairs.count { (a, b) -> fullyEnclosed(a, b) || fullyEnclosed(b, a) }

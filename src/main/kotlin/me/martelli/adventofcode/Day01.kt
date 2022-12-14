@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day1.txt")
+    val input = resource("day01.txt")
     val lines = input.readLines()
     val elves = mutableListOf<Int>()
     var currentCalories = 0

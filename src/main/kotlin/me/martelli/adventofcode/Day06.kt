@@ -1,7 +1,7 @@
 package me.martelli.adventofcode
 
 fun main() {
-    val input = resource("day6.txt")
+    val input = resource("day06.txt")
     val datastream = input.readText()
     val startOfPacket = findUniqueSequence(datastream, 4)
     val startOfMessage = findUniqueSequence(datastream, 14)
