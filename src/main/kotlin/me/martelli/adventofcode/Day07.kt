@@ -26,7 +26,7 @@ fun main() {
     println("2) Size of dir to delete: $dirToDelete")
 }
 
-sealed class Entry {
+private sealed class Entry {
     abstract val size: Int
 
     data class File(override val size: Int) : Entry()

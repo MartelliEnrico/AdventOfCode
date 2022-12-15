@@ -11,13 +11,13 @@ fun main() {
     println("2) Unit of sand added: $sandUnits")
 }
 
-fun String.toPath() = this.split(" -> ").map { it.toPoint() }.let { Path(it) }
+private fun String.toPath() = this.split(" -> ").map { it.toPoint() }.let { Path(it) }
 
-fun String.toPoint() = this.split(",").let { (x, y) -> Point(x.toInt(), y.toInt()) }
+private fun String.toPoint() = this.split(",").let { (x, y) -> Point(x.toInt(), y.toInt()) }
 
-data class Path(val points: List<Point>)
+private data class Path(val points: List<Point>)
 
-fun Path.drawLine() = points.windowed(2) { (a, b) ->
+private fun Path.drawLine() = points.windowed(2) { (a, b) ->
     if (a.x == b.x) {
         listOf(a.y, b.y).sorted().let { (min, max) -> min..max }.map { Point(a.x, it) }
     } else {
@@ -25,13 +25,13 @@ fun Path.drawLine() = points.windowed(2) { (a, b) ->
     }
 }.flatten().toSet()
 
-data class Point(val x: Int, val y: Int) {
+private data class Point(val x: Int, val y: Int) {
     companion object {
         val Start = Point(500, 0)
     }
 }
 
-fun simulateSandBottomless(grid: Set<Point>): Int {
+private fun simulateSandBottomless(grid: Set<Point>): Int {
     val newGrid = grid.toMutableSet()
     fun Point.next() = listOf(copy(y = y+1), copy(x = x-1, y = y+1), copy(x = x+1, y = y+1)).firstOrNull { !newGrid.contains(it) }
     val maxY = grid.maxOf { it.y } + 1
@@ -50,7 +50,7 @@ fun simulateSandBottomless(grid: Set<Point>): Int {
     return newGrid.size - grid.size
 }
 
-fun simulateSand(grid: Set<Point>): Int {
+private fun simulateSand(grid: Set<Point>): Int {
     val newGrid = grid.toMutableSet()
     val maxY = grid.maxOf { it.y } + 2
     fun Point.next() = listOf(copy(y = y+1), copy(x = x-1, y = y+1), copy(x = x+1, y = y+1)).firstOrNull { !newGrid.contains(it) }

@@ -10,6 +10,6 @@ fun main() {
     println("2) Partially overlapped: $partiallyOverlapped")
 }
 
-fun fullyEnclosed(a: IntRange, b: IntRange): Boolean = a.first in b && a.last in b
+private fun fullyEnclosed(a: IntRange, b: IntRange): Boolean = a.first in b && a.last in b
 
-fun partiallyOverlapped(a: IntRange, b: IntRange): Boolean = a.first in b || a.last in b
+private fun partiallyOverlapped(a: IntRange, b: IntRange): Boolean = a.first in b || a.last in b

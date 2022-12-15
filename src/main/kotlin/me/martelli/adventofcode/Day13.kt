@@ -15,7 +15,7 @@ fun main() {
     println("2) Decoder key: $decoderKey")
 }
 
-sealed class Packet: Comparable<Packet> {
+private sealed class Packet: Comparable<Packet> {
     class Number(val value: Int): Packet()
 
     class Group(val value: List<Packet>): Packet()
@@ -37,7 +37,7 @@ sealed class Packet: Comparable<Packet> {
     }
 }
 
-fun parsePacket(input: String) = innerParsePacket(Json.parseToJsonElement(input))
+private fun parsePacket(input: String) = innerParsePacket(Json.parseToJsonElement(input))
 
 private fun innerParsePacket(element: JsonElement): Packet = when (element) {
     is JsonArray -> Packet.Group(element.map(::innerParsePacket))

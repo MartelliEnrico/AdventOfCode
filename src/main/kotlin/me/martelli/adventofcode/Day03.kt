@@ -10,7 +10,7 @@ fun main() {
     println("2) Total Badges: $totalBadges")
 }
 
-data class Rucksack(val items: String) {
+private data class Rucksack(val items: String) {
     private val first: String
         get() = items.substring(0, items.length/2)
 
@@ -20,11 +20,11 @@ data class Rucksack(val items: String) {
     fun getCommonItems(): Set<Char> = first.toCharArray().intersect(second.toCharArray().toSet())
 }
 
-fun List<Rucksack>.getGroupBadge(): Char = this.fold(this[0].items.toCharArray().toSet()) {
+private fun List<Rucksack>.getGroupBadge(): Char = this.fold(this[0].items.toCharArray().toSet()) {
         acc, it -> it.items.toCharArray().intersect(acc)
 }.first()
 
-val Char.priority: Int
+private val Char.priority: Int
     get() = when(this) {
         in 'a'..'z' -> 1 + (this - 'a')
         in 'A'..'Z' -> 27 + (this - 'A')

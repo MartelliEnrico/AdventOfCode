@@ -10,7 +10,7 @@ fun main() {
     println("2) Secret Score: $secretTotal")
 }
 
-enum class Move {
+private enum class Move {
     Rock, Paper, Scissor;
 
     private fun typeScore() = when (this) {

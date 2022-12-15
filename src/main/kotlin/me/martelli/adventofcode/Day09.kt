@@ -27,11 +27,11 @@ fun main() {
     println("2) Total visited by 9: $totalVisitedBy9")
 }
 
-enum class Direction {
+private enum class Direction {
     Up, Down, Left, Right
 }
 
-fun String.toDirection() = when (this) {
+private fun String.toDirection() = when (this) {
     "U" -> Direction.Up
     "D" -> Direction.Down
     "L" -> Direction.Left
@@ -39,13 +39,13 @@ fun String.toDirection() = when (this) {
     else -> error("unreachable")
 }
 
-data class Movement(val direction: Direction, val steps: Int)
+private data class Movement(val direction: Direction, val steps: Int)
 
-data class Position(val x: Int, val y: Int)
+private data class Position(val x: Int, val y: Int)
 
-fun Position.distance(other: Position): Int = max(abs(x - other.x), abs(y - other.y))
+private fun Position.distance(other: Position): Int = max(abs(x - other.x), abs(y - other.y))
 
-open class Segment(var position: Position, var next: Segment? = null) {
+private open class Segment(var position: Position, var next: Segment? = null) {
     fun move(direction: Direction) {
         position.also {
             position = when (direction) {
@@ -69,13 +69,13 @@ open class Segment(var position: Position, var next: Segment? = null) {
     }
 }
 
-fun Segment.move(movement: Movement) {
+private fun Segment.move(movement: Movement) {
     for (i in 1..movement.steps) {
         move(movement.direction)
     }
 }
 
-class LoggingSegment(val visited: MutableSet<Position>, position: Position, next: Segment? = null) : Segment(position, next) {
+private class LoggingSegment(val visited: MutableSet<Position>, position: Position, next: Segment? = null) : Segment(position, next) {
     init {
         visited.add(position)
     }

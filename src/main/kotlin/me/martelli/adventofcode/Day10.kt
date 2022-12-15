@@ -14,13 +14,13 @@ fun main() {
     println("2) CRT:\n$crt")
 }
 
-sealed class CpuInstruction {
+private sealed class CpuInstruction {
     data class AddX(val value: Int) : CpuInstruction()
 
     object NoOp : CpuInstruction()
 }
 
-fun String.toCpuInstruction(): CpuInstruction = split(" ").let {
+private fun String.toCpuInstruction(): CpuInstruction = split(" ").let {
     return when (it[0]) {
         "addx" -> CpuInstruction.AddX(it[1].toInt())
         "noop" -> CpuInstruction.NoOp
@@ -28,7 +28,7 @@ fun String.toCpuInstruction(): CpuInstruction = split(" ").let {
     }
 }
 
-fun List<CpuInstruction>.runCpuInstructions() = sequence {
+private fun List<CpuInstruction>.runCpuInstructions() = sequence {
     var registerValue = 1
     var cycle = 1
     this@runCpuInstructions.forEach {

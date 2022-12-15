@@ -10,7 +10,7 @@ fun main() {
     println("2) Monkey business #2: $secondRun")
 }
 
-data class Monkey(
+private data class Monkey(
     val items: MutableList<Long>,
     val worryLevelIncrease: (Long) -> Long,
     val test: Long,
@@ -20,7 +20,7 @@ data class Monkey(
     fun throwTo(item: Long) = if (item % test == 0L) positive else negative
 }
 
-fun List<String>.toMonkey(): Monkey {
+private fun List<String>.toMonkey(): Monkey {
     val items = this[1].split(": ")[1].split(",").map { it.trim().toLong() }.toMutableList()
     val operation: (Long) -> Long = this[2].split(" = ")[1].split(" ").let {
         when (it[1]) {
@@ -38,9 +38,9 @@ fun List<String>.toMonkey(): Monkey {
     return Monkey(items, operation, test, positive, negative)
 }
 
-fun clone(monkeys: List<Monkey>) = monkeys.map { it.copy(items = it.items.toMutableList()) }.toList()
+private fun clone(monkeys: List<Monkey>) = monkeys.map { it.copy(items = it.items.toMutableList()) }.toList()
 
-fun run(monkeys: List<Monkey>, repetitions: Int, worryLevelDecrease: (Long) -> Long): Long {
+private fun run(monkeys: List<Monkey>, repetitions: Int, worryLevelDecrease: (Long) -> Long): Long {
     val inspections = MutableList(monkeys.size) { 0L }
     val lcm = monkeys.map { it.test }.reduce { a, b -> a * b }
     repeat(repetitions) {

@@ -13,7 +13,7 @@ fun main() {
     println("2) Shortest distance: $shortestDistance")
 }
 
-val Char.height: Int
+private val Char.height: Int
     get() = when (this) {
         'S' -> 1
         'E' -> 26
@@ -21,15 +21,15 @@ val Char.height: Int
         else -> error("unreachable")
     }
 
-fun find(lines: List<String>, character: Char) = lines
+private fun find(lines: List<String>, character: Char) = lines
     .mapIndexed { index, line -> index to line.indexOf(character) }
     .first { (_, x) -> x != -1 }
 
-fun findAll(lines: List<String>, character: Char) = lines
+private fun findAll(lines: List<String>, character: Char) = lines
     .mapIndexed { index, line -> index to line.indexOf(character) }
     .filter { (_, x) -> x != -1 }
 
-fun moves(pair: Pair<Int, Int>) = buildList {
+private fun moves(pair: Pair<Int, Int>) = buildList {
     val (y, x) = pair
     add(y+1 to x)
     add(y-1 to x)
@@ -37,7 +37,7 @@ fun moves(pair: Pair<Int, Int>) = buildList {
     add(y to x-1)
 }
 
-fun shortestDistance(heightMap: List<List<Int>>, start: Pair<Int, Int>, end: Pair<Int, Int>): Int {
+private fun shortestDistance(heightMap: List<List<Int>>, start: Pair<Int, Int>, end: Pair<Int, Int>): Int {
     fun possible(from: Pair<Int, Int>, to: Pair<Int, Int>) = heightMap[to] in 0..heightMap[from]+1
     val unvisitedSet = mutableSetOf<Pair<Int, Int>>()
     val tentativeDistance = mutableMapOf<Pair<Int, Int>, Int>()
@@ -62,4 +62,4 @@ fun shortestDistance(heightMap: List<List<Int>>, start: Pair<Int, Int>, end: Pai
     return tentativeDistance[end]!!
 }
 
-operator fun List<List<Int>>.get(pair: Pair<Int, Int>) = this[pair.first][pair.second]
+private operator fun List<List<Int>>.get(pair: Pair<Int, Int>) = this[pair.first][pair.second]

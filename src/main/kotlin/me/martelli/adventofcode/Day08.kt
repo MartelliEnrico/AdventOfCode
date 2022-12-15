@@ -30,7 +30,7 @@ fun main() {
     println("2) Max scenic score: $maxScenicScore")
 }
 
-data class Matrix(private val inner: List<List<Int>>) {
+private data class Matrix(private val inner: List<List<Int>>) {
     val width = inner[0].size
     val height = inner.size
 
