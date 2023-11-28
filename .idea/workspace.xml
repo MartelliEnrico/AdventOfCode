@@ -5,24 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ef8c0c3-22f1-462a-a39b-dc5900cdc9da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/day1/Day1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2023/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day02.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day09.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day12.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day13.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day14.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/Day15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/me/martelli/adventofcode/year2022/Day15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/2022/day15.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +62,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2IJfbwVTszmm2aduqgO5yBm0Lvm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,32 +84,33 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/martellien/IdeaProjects/AdventOfCode/src/main/kotlin/me/martelli/adventofcode/year2023",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.Day1Kt">
-    <configuration name="AdventOfCode [wrapper --gradle-version=7.6]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="wrapper" />
-            <option value="--gradle-version=7.6" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\martellien\IdeaProjects\AdventOfCode\src\main\kotlin\me\martelli\adventofcode\year2023" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\martellien\IdeaProjects\AdventOfCode\src\main\resources\2023" />
+      <recent name="C:\Users\martellien\IdeaProjects\AdventOfCode\src\main\kotlin\me\martelli\adventofcode" />
+      <recent name="C:\Users\martellien\IdeaProjects\AdventOfCode\src\main\kotlin\me\martelli\adventofcode\year2023" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="Day1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.martelli.adventofcode.day1.Day1Kt" />
       <module name="AdventOfCode.main" />
@@ -93,7 +121,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Day1Kt" />
-        <item itemvalue="Gradle.AdventOfCode [wrapper --gradle-version=7.6]" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +132,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669904682084</updated>
+      <workItem from="1701171414220" duration="176000" />
+      <workItem from="1701171595110" duration="103000" />
+      <workItem from="1701171965962" duration="196000" />
+      <workItem from="1701172182741" duration="2090000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

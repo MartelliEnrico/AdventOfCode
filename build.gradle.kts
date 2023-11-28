@@ -1,8 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-    kotlin("jvm") version "1.7.20"
-    kotlin("plugin.serialization") version "1.7.20"
+    kotlin("jvm") version "1.9.21"
+    kotlin("plugin.serialization") version "1.9.21"
 }
 
 group = "me.martelli"
@@ -13,9 +14,14 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "18"
+kotlin {
+    jvmToolchain(21)
+
+    compilerOptions {
+        apiVersion = KotlinVersion.KOTLIN_2_1
+        jvmTarget = JvmTarget.JVM_21
+    }
 }

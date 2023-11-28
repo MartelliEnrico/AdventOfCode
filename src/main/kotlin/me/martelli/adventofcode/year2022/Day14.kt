@@ -1,4 +1,4 @@
-package me.martelli.adventofcode
+package me.martelli.adventofcode.year2022
 
 fun main() {
     val input = resource("day14.txt")
