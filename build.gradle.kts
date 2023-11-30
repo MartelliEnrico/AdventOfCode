@@ -21,7 +21,7 @@ kotlin {
     jvmToolchain(21)
 
     compilerOptions {
-        apiVersion = KotlinVersion.KOTLIN_2_1
         jvmTarget = JvmTarget.JVM_21
+        languageVersion = KotlinVersion.KOTLIN_2_1
     }
 }

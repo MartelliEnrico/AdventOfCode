@@ -1,5 +1,8 @@
 package me.martelli.adventofcode.year2023
 
-import me.martelli.adventofcode.resource as baseResource
+import me.martelli.adventofcode.test as baseTest
 
-fun resource(name: String) = baseResource("2023/$name")
+import java.io.File
+
+fun <T> test(day: String, phase1: (File) -> T, result1: T? = null, phase2: ((File) -> T)? = null, result2: T? = null) =
+    baseTest("2023/$day.txt", phase1, result1, phase2, result2)
