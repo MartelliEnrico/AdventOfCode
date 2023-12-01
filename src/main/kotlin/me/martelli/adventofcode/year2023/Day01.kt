@@ -10,28 +10,18 @@ fun phase1(input: File) = input.readLines()
         list.first() * 10 + list.last()
     }
 
-val Number = "([1-9]|one|two|three|four|five|six|seven|eight|nine)"
-val Line = "($Number.*$Number|$Number)".toRegex()
-
 fun phase2(input: File) = input.readLines()
     .sumOf {
-        val groups = Line.find(it)!!.groupValues
-        if (groups[4].isEmpty()) {
-            (groups[2].toNumber() * 10) + groups[3].toNumber()
-        } else {
-            groups[4].toNumber() * 11
-        }
+        val matches = Number.findAll(it)
+        val first = matches.first().groupValues[1]
+        val last = matches.last().groupValues[1]
+        first.toNumber() * 10 + last.toNumber()
     }
 
-fun String.toNumber(): Int = when(this) {
-    "one" -> 1
-    "two" -> 2
-    "three" -> 3
-    "four" -> 4
-    "five" -> 5
-    "six" -> 6
-    "seven" -> 7
-    "eight" -> 8
-    "nine" -> 9
-    else -> toInt()
+val Numbers = mapOf("one" to 1, "two" to 2, "three" to 3, "four" to 4, "five" to 5, "six" to 6, "seven" to 7, "eight" to 8, "nine" to 9)
+val Number = "(?=([1-9]|${Numbers.keys.joinToString(separator = "|")})).".toRegex()
+
+fun String.toNumber(): Int = when {
+    this[0].isDigit() -> this[0].digitToInt()
+    else -> Numbers[this]!!
 }
