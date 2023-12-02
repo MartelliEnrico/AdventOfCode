@@ -4,13 +4,13 @@ import java.io.File
 
 fun main() = test("01", ::phase1, 54239, ::phase2, 55343)
 
-fun phase1(input: File) = input.readLines()
+private fun phase1(input: File) = input.readLines()
     .sumOf {
         val list = it.mapNotNull { if (it.isDigit()) it.digitToInt() else null  }
         list.first() * 10 + list.last()
     }
 
-fun phase2(input: File) = input.readLines()
+private fun phase2(input: File) = input.readLines()
     .sumOf {
         val matches = Number.findAll(it)
         val first = matches.first().groupValues[1]
