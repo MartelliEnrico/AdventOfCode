@@ -1,7 +1,6 @@
 package me.martelli.adventofcode.year2023
 
 import java.io.File
-import kotlin.math.max
 
 fun main() = test("02", ::phase1, 2164, ::phase2, 69929)
 
@@ -40,15 +39,8 @@ fun String.toGame(): Game {
                     color to number.toInt()
                 }
         }
-        .fold(mutableMapOf<String, Int>()) { acc, map ->
-            map.entries.forEach { (key, value) ->
-                if (acc.containsKey(key)) {
-                    acc[key] = max(acc[key]!!, value)
-                } else {
-                    acc[key] = value
-                }
-            }
-            acc
-        }
+        .flatMap { it.entries }
+        .groupBy { it.key }
+        .mapValues { it.value.maxOf { v -> v.value } }
     return Game(id.toInt(), colors["red"] ?: 0, colors["green"] ?: 0, colors["blue"] ?: 0)
 }
