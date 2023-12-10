@@ -2,14 +2,14 @@ package me.martelli.adventofcode.year2023
 
 import java.io.File
 
-fun main() = test("08", ::phase1, 14893, ::phase2)
+fun main() = test("08", ::phase1, 14893, ::phase2, 10241191004509)
 
-private fun phase1(input: File): Int {
+private fun phase1(input: File): Long {
     val map = input.readLines().toSandMap()
     return map.countSteps()
 }
 
-private fun phase2(input: File): Int {
+private fun phase2(input: File): Long {
     val map = input.readLines().toSandMap()
     return map.countStepsSimultaneously()
 }
@@ -38,9 +38,9 @@ data class SandMap(val directions: List<Direction>, val nodes: Map<String, Pair<
     private val loopingDirections
         get() = sequence { while (true) yieldAll(directions) }.iterator()
 
-    fun countSteps(): Int {
+    fun countSteps(): Long {
         val directions = loopingDirections
-        var count = 0
+        var count = 0L
         var node = "AAA"
         do {
             val (left, right) = nodes[node]!!
@@ -53,24 +53,37 @@ data class SandMap(val directions: List<Direction>, val nodes: Map<String, Pair<
         return count
     }
 
-    fun countStepsSimultaneously(): Int {
-        val directions = loopingDirections
-        var count = 0
-        var shouldContinue: Boolean
-        var currentNodes = nodes.keys.filter { it.endsWith("A") }
-        do {
-            shouldContinue = false
-            val nextDirection = directions.next()
-            currentNodes = currentNodes.map {
-                val (left, right) = nodes[it]!!
-                when (nextDirection) {
+    fun countStepsSimultaneously(): Long {
+        fun gcd(a: Long, b: Long): Long {
+            return if (b == 0L) a else gcd(b, a % b)
+        }
+
+        fun lcm(a: Long, b: Long): Long {
+            return a * (b / gcd(a, b))
+        }
+
+        return nodes.keys.filter { it.endsWith("A") }.map {
+            val directions = loopingDirections
+            var count = 0L
+            var node = it
+            var firstEnd = 0L
+            while (true) {
+                val (left, right) = nodes[node]!!
+                node = when (directions.next()) {
                     Direction.Left -> left
                     Direction.Right -> right
-                }.also { n -> shouldContinue = shouldContinue || !n.endsWith("Z") }
+                }
+                count++
+                if (node.endsWith("Z")) {
+                    if (firstEnd == 0L) {
+                        firstEnd = count
+                    } else {
+                        break
+                    }
+                }
             }
-            count++
-        } while (shouldContinue)
-        return count
+            count - firstEnd
+        }.reduce(::lcm)
     }
 }
 
