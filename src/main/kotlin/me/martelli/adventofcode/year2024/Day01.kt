@@ -6,19 +6,19 @@ import kotlin.math.abs
 fun main() = test("01", ::phase1, 1189304, ::phase2, 24349736)
 
 private fun phase1(input: File) = input.readLines()
-    .map { it.split("\\s+".toPattern()).map(String::toInt) }
-    .transpose()
-    .map { it.sorted() }
-    .transpose()
-    .sumOf { abs(it[0] - it[1]) }
-
-private fun phase2(input: File) = input.readLines()
-    .map { it.split("\\s+".toPattern()).map(String::toInt) }
-    .transpose()
-    .let { (a, b) ->
-        a.sumOf { aval -> aval * b.count { bval -> aval == bval } }
+    .map { it.split(Whitespace).map(String::toInt) }
+    .let { items ->
+        val a = MutableList(items.size) { items[it][0] }.sorted()
+        val b = MutableList(items.size) { items[it][1] }.sorted()
+        a.zip(b) { av, bv -> abs(av - bv) }.sum()
     }
 
-fun <T> List<List<T>>.transpose(): List<List<T>> {
-    return (this[0].indices).map { i -> (this.indices).map { j -> this[j][i] } }
-}
+private fun phase2(input: File) = input.readLines()
+    .map { it.split(Whitespace).map(String::toInt) }
+    .let { items ->
+        val a = MutableList(items.size) { items[it][0] }
+        val b = MutableList(items.size) { items[it][1] }
+        a.sumOf { av -> av * b.count { bv -> av == bv } }
+    }
+
+val Whitespace = "\\s+".toPattern()
