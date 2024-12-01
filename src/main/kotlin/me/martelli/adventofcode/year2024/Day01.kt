@@ -1,11 +1,11 @@
 package me.martelli.adventofcode.year2024
 
-import java.io.File
+import me.martelli.adventofcode.test
 import kotlin.math.abs
 
-fun main() = test("01", ::phase1, 1189304, ::phase2, 24349736)
+fun main() = test(2024, 1, ::part1, ::part2)
 
-private fun phase1(input: File) = input.readLines()
+private fun part1(input: String) = input.lines()
     .map { it.split(Whitespace).map(String::toInt) }
     .let { items ->
         val a = MutableList(items.size) { items[it][0] }.sorted()
@@ -13,7 +13,7 @@ private fun phase1(input: File) = input.readLines()
         a.zip(b) { av, bv -> abs(av - bv) }.sum()
     }
 
-private fun phase2(input: File) = input.readLines()
+private fun part2(input: String) = input.lines()
     .map { it.split(Whitespace).map(String::toInt) }
     .let { items ->
         val a = MutableList(items.size) { items[it][0] }
@@ -21,4 +21,4 @@ private fun phase2(input: File) = input.readLines()
         a.sumOf { av -> av * b.count { bv -> av == bv } }
     }
 
-val Whitespace = "\\s+".toPattern()
+private val Whitespace = Regex("\\s+")
