@@ -3,6 +3,7 @@ package me.martelli.adventofcode
 import com.charleskorn.kaml.Yaml
 import kotlinx.serialization.Serializable
 import java.io.File
+import kotlin.time.measureTimedValue
 
 fun resource(name: String): File = File(ClassLoader.getSystemResource(name).file)
 
@@ -33,18 +34,18 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
     val (header, input) = text.split(Regex("---(\\r\\n|\\r|\\n)"))
     val parsed = Yaml.default.decodeFromString(Header.serializer(), header)
 
-    val phase1Result = part1(input).toString()
-    println("Phase 1 result: [$phase1Result]")
+    val (result1, t1) = measureTimedValue { part1(input) }
+    println("Phase 1 result: [$result1] in $t1")
 
-    if (parsed.part1 != phase1Result) {
+    if (parsed.part1 != result1.toString()) {
         error("Phase 1 result not matching: expected [${parsed.part1}]")
     }
 
     if (part2 != null) {
-        val phase2Result = part2(input).toString()
-        println("Phase 2 result: [$phase2Result]")
+        val (result2, t2) = measureTimedValue { part2(input) }
+        println("Phase 2 result: [$result2] in $t2")
 
-        if (parsed.part2 != null && parsed.part2 != phase2Result) {
+        if (parsed.part2 != null && parsed.part2 != result2.toString()) {
             error("Phase 2 result not matching: expected [${parsed.part2}]")
         }
     }
