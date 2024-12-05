@@ -28,9 +28,9 @@ private fun part2(input: String): Int {
         }
         true
     }.map { p ->
-        val pages = p.toMutableList()
-        fixOrdering(pages, rules)
-        pages.toList()
+        p.sortedWith { a, b ->
+            if (rules.getOrDefault(a, emptyList()).contains(b)) -1 else 0
+        }
     }
 
     return incorrect.sumOf { it[it.size / 2] }
@@ -53,17 +53,4 @@ private fun String.getRulesAndPrintings() = let { input ->
     }
 
     rules to printings
-}
-
-private fun fixOrdering(list: MutableList<Int>, rules: Map<Int, List<Int>>) {
-    list.forEachIndexed { index, page ->
-        val prevPages = rules.getOrDefault(page, emptyList())
-        for (prevPage in prevPages) {
-            val prevIndex = list.indexOf(prevPage)
-            if (prevIndex > index) {
-                list[prevIndex] = list[index].also { list[index] = list[prevIndex] }
-                fixOrdering(list.subList(0, prevIndex), rules)
-            }
-        }
-    }
 }
