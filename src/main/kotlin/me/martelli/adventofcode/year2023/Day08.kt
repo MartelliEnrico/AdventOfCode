@@ -14,7 +14,7 @@ private fun phase2(input: File): Long {
     return map.countStepsSimultaneously()
 }
 
-fun List<String>.toSandMap(): SandMap {
+private fun List<String>.toSandMap(): SandMap {
     val directions = get(0).map {
         when (it) {
             'L' -> Direction.Left
@@ -31,10 +31,10 @@ fun List<String>.toSandMap(): SandMap {
     return SandMap(directions, nodes)
 }
 
-const val NodeId = "[A-Z]{3}"
-val NodeLine = "($NodeId) = \\(($NodeId), ($NodeId)\\)".toRegex()
+private const val NodeId = "[A-Z]{3}"
+private val NodeLine = "($NodeId) = \\(($NodeId), ($NodeId)\\)".toRegex()
 
-data class SandMap(val directions: List<Direction>, val nodes: Map<String, Pair<String, String>>) {
+private data class SandMap(val directions: List<Direction>, val nodes: Map<String, Pair<String, String>>) {
     private val loopingDirections
         get() = sequence { while (true) yieldAll(directions) }.iterator()
 
@@ -87,6 +87,6 @@ data class SandMap(val directions: List<Direction>, val nodes: Map<String, Pair<
     }
 }
 
-enum class Direction {
+private enum class Direction {
     Left, Right
 }
