@@ -15,7 +15,7 @@ private fun phase2(input: File) =
         .expand(1000000)
         .sumOfDistances()
 
-fun List<String>.expand(expansion: Int): Universe {
+private fun List<String>.expand(expansion: Int): Universe {
     val emptyLines = mapIndexed { x, line ->
         if (line.indexOf('#') == -1) x else null
     }.filterNotNull()
@@ -36,7 +36,7 @@ fun List<String>.expand(expansion: Int): Universe {
     return Universe(expansion - 1, emptyLines, emptyColumns, galaxies)
 }
 
-data class Universe(
+private data class Universe(
     val expansion: Int,
     val emptyLines: List<Int>,
     val emptyColumns: List<Int>,
@@ -52,9 +52,9 @@ data class Universe(
             }
 }
 
-typealias Point = Pair<Int, Int>
+private typealias Point = Pair<Int, Int>
 
-fun <T> List<T>.pairs() = sequence {
+private fun <T> List<T>.pairs() = sequence {
     forEachIndexed { i, t ->
         for (j in i+1..<size) {
             yield(listOf(t, get(j)))
@@ -62,6 +62,6 @@ fun <T> List<T>.pairs() = sequence {
     }
 }
 
-fun Point.distanceTo(other: Point) = abs(first - other.first) + abs(second - other.second)
+private fun Point.distanceTo(other: Point) = abs(first - other.first) + abs(second - other.second)
 
-fun absRange(a: Int, b: Int) = if (a < b) a..b else b..a
+private fun absRange(a: Int, b: Int) = if (a < b) a..b else b..a
