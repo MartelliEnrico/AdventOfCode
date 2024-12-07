@@ -2,7 +2,7 @@ package me.martelli.adventofcode.year2023
 
 import java.io.File
 
-fun <T> test(day: String, phase1: (File) -> T, result1: T? = null, phase2: ((File) -> T)? = null, result2: T? = null) {
+internal fun <T> test(day: String, phase1: (File) -> T, result1: T? = null, phase2: ((File) -> T)? = null, result2: T? = null) {
     val input = File(ClassLoader.getSystemResource("2023/day$day.txt").file)
 
     val phase1Result = phase1(input)

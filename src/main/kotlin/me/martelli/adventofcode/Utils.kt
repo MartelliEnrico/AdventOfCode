@@ -11,7 +11,7 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
 
     for (index in 0..<parts.size/2) {
         val header = Yaml.default.decodeFromString(Header.serializer(), parts[2 * index])
-        val input = parts[2 * index + 1]
+        val input = parts[2 * index + 1].trim()
 
         val (result1, t1) = measureTimedValue { part1(input) }
         println("Part 1 result: [$result1] in $t1")
