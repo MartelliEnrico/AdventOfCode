@@ -14,21 +14,21 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
         val input = parts[2 * index + 1]
 
         val (result1, t1) = measureTimedValue { part1(input) }
-        println("Phase 1 result: [$result1] in $t1")
+        println("Part 1 result: [$result1] in $t1")
 
         if (header.part1 != result1.toString()) {
-            errorPrintln("Phase 1 result not matching: expected [${header.part1}]")
+            errorPrintln("Part 1 result not matching: expected [${header.part1}]")
         }
 
         if (part2 != null) {
             val (result2, t2) = measureTimedValue { part2(input) }
-            println("Phase 2 result: [$result2] in $t2")
+            println("Part 2 result: [$result2] in $t2")
 
             if (header.part2 != null && header.part2 != result2.toString()) {
-                errorPrintln("Phase 2 result not matching: expected [${header.part2}]")
+                errorPrintln("Part 2 result not matching: expected [${header.part2}]")
             }
         } else {
-            println("Skipping phase 2: missing result")
+            println("Skipping part 2: missing result")
         }
 
         println("---")
