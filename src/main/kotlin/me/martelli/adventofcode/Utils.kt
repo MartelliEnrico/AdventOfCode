@@ -28,7 +28,7 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
                 errorPrintln("Part 2 result not matching: expected [${header.part2}]")
             }
         } else {
-            println("Skipping part 2: missing result")
+            println("Skipping part 2")
         }
 
         println("---")
