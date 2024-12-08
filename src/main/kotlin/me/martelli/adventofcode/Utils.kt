@@ -13,6 +13,8 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
         val header = Yaml.default.decodeFromString(Header.serializer(), parts[2 * index])
         val input = parts[2 * index + 1].trim()
 
+        try { part1(input) } catch (_: Throwable) {} // cold start
+
         val (result1, t1) = measureTimedValue { part1(input) }
         println("Part 1 result: [$result1] in $t1")
 
@@ -21,6 +23,8 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
         }
 
         if (part2 != null) {
+            try { part2(input) } catch (_: Throwable) {} // cold start
+
             val (result2, t2) = measureTimedValue { part2(input) }
             println("Part 2 result: [$result2] in $t2")
 
