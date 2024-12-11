@@ -9,30 +9,34 @@ fun <T> test(year: Int, day: Int, part1: (String) -> T, part2: ((String) -> T)? 
     val text = ClassLoader.getSystemResource("%d/day%02d.yaml".format(year, day)).readText()
     val parts = text.split(Regex("---(\\r\\n|\\r|\\n)"))
 
+    // cold start
+    try { part1("") } catch (_: Throwable) {}
+    try { if (part2 != null) part2("") } catch (_: Throwable) {}
+
     for (index in 0..<parts.size/2) {
         val header = Yaml.default.decodeFromString(Header.serializer(), parts[2 * index])
         val input = parts[2 * index + 1].trim()
 
-        try { if (index == 0) part1(input) } catch (_: Throwable) {} // cold start
+        print("Part 1 ")
 
         val (result1, t1) = measureTimedValue { part1(input) }
-        println("Part 1 result: [$result1] in $t1")
+        println("result: [$result1] in $t1")
 
         if (header.part1 != result1.toString()) {
             errorPrintln("Part 1 result not matching: expected [${header.part1}]")
         }
 
-        if (part2 != null) {
-            try { if (index == 0) part2(input) } catch (_: Throwable) {} // cold start
+        print("Part 2 ")
 
+        if (part2 != null && header.part2 != null) {
             val (result2, t2) = measureTimedValue { part2(input) }
-            println("Part 2 result: [$result2] in $t2")
+            println("result: [$result2] in $t2")
 
-            if (header.part2 != null && header.part2 != result2.toString()) {
+            if (header.part2 != result2.toString()) {
                 errorPrintln("Part 2 result not matching: expected [${header.part2}]")
             }
         } else {
-            println("Skipping part 2")
+            println("skipped")
         }
 
         println("---")
